@@ -1,0 +1,6 @@
+# Copia este archivo a local.properties y ajusta las rutas a tu entorno.
+# flutter pub get / build lo genera normalmente de forma automática.
+sdk.dir=/ruta/a/tu/Android/sdk
+flutter.sdk=/ruta/a/tu/flutter
+flutter.versionName=1.0.0
+flutter.versionCode=1
