@@ -710,8 +710,10 @@ class _TransactionFormState extends State<TransactionForm> {
         const SizedBox(height: 8),
         TextField(
           controller: _destSearch,
-          keyboardType: TextInputType.number,
-          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+          keyboardType: TextInputType.text,
+          inputFormatters: [
+            FilteringTextInputFormatter.allow(RegExp(r'[A-Za-z0-9\-]')),
+          ],
           decoration: InputDecoration(
             hintText: 'Número de cuenta destino',
             prefixIcon: const Icon(Icons.tag),
