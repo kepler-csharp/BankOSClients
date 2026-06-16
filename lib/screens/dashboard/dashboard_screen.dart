@@ -142,7 +142,7 @@ class DashboardScreen extends StatelessWidget {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
         ),
         SizedBox(
-          height: 190,
+          height: 215,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -159,7 +159,7 @@ class DashboardScreen extends StatelessWidget {
     return Container(
       width: 300,
       margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [

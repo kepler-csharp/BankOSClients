@@ -172,3 +172,32 @@ class QrPayload {
         ownerName: (j['owner_name'] ?? '').toString(),
       );
 }
+
+/// Cuenta resuelta en OTRO banco (resultado de /transactions/resolve-external).
+/// Se usa para confirmar el titular antes de transferir entre bancos.
+class ExternalAccount {
+  final String accountId;
+  final String accountNumber;
+  final String currency;
+  final String ownerName;
+  final String tenantId;
+  final String bankName;
+
+  ExternalAccount({
+    required this.accountId,
+    required this.accountNumber,
+    required this.currency,
+    required this.ownerName,
+    required this.tenantId,
+    required this.bankName,
+  });
+
+  factory ExternalAccount.fromJson(Map<String, dynamic> j) => ExternalAccount(
+        accountId: (j['account_id'] ?? '').toString(),
+        accountNumber: (j['account_number'] ?? '').toString(),
+        currency: (j['currency'] ?? 'COP').toString(),
+        ownerName: (j['owner_name'] ?? '').toString(),
+        tenantId: (j['tenant_id'] ?? '').toString(),
+        bankName: (j['bank_name'] ?? j['tenant_id'] ?? '').toString(),
+      );
+}

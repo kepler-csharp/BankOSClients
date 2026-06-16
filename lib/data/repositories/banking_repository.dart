@@ -5,6 +5,14 @@ import '../models/models.dart';
 class AccountRepository {
   final _api = ApiClient.instance;
 
+  /// Lista pública de bancos (tenants) para el selector de banco destino
+  /// en transferencias entre bancos.
+  Future<List<Bank>> banks() async {
+    final data = await _api.get('/banks', noTenant: true);
+    final list = (data as List).cast<Map<String, dynamic>>();
+    return list.map(Bank.fromJson).toList();
+  }
+
   /// Lista las cuentas del cliente (la API filtra a "solo las propias").
   Future<List<Account>> myAccounts({String? status}) async {
     final data = await _api.get('/accounts', query: {
@@ -95,12 +103,48 @@ class TransactionRepository {
     return TxModel.fromJson((data as Map).cast<String, dynamic>());
   }
 
+  /// Resuelve (busca) una cuenta en OTRO banco por número, antes de transferir.
+  /// Devuelve los datos de la cuenta destino para confirmar el titular.
+  Future<ExternalAccount> resolveExternal({
+    required String destTenantId,
+    required String destAccountNumber,
+  }) async {
+    final data = await _api.post('/transactions/resolve-external', data: {
+      'dest_tenant_id': destTenantId,
+      'account_number': destAccountNumber,
+    });
+    return ExternalAccount.fromJson((data as Map).cast<String, dynamic>());
+  }
+
+  /// Transferencia ENTRE BANCOS distintos (cross-tenant).
+  Future<TxModel> transferExternal({
+    required String sourceAccountId,
+    required String destTenantId,
+    required String destAccountNumber,
+    required double amount,
+    String? description,
+  }) async {
+    final data = await _api.post(
+      '/transactions/transfer-external',
+      idempotent: true,
+      data: {
+        'source_account_id': sourceAccountId,
+        'dest_tenant_id': destTenantId,
+        'dest_account_number': destAccountNumber,
+        'amount': amount,
+        if (description != null && description.isNotEmpty)
+          'description': description,
+      },
+    );
+    return TxModel.fromJson((data as Map).cast<String, dynamic>());
+  }
+
   /// Retiro paso 1: el backend envía un OTP de 6 dígitos al correo (10 min).
   Future<void> requestWithdrawalCode({
     required String accountId,
     required double amount,
   }) async {
-    await _api.post('/withdrawal/request-code', data: {
+    await _api.post('/transactions/withdrawal/request-code', data: {
       'account_id': accountId,
       'amount': amount,
     });
@@ -114,7 +158,7 @@ class TransactionRepository {
     String? description,
   }) async {
     final data = await _api.post(
-      '/withdrawal/confirm',
+      '/transactions/withdrawal/confirm',
       idempotent: true,
       data: {
         'account_id': accountId,
