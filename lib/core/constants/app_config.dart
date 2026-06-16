@@ -15,7 +15,7 @@ class AppConfig {
   /// En el emulador Android, localhost del PC es 10.0.2.2.
   static const String apiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://bank-os.duckdns.org/api/v1',
+    defaultValue: 'http://87.99.154.103:3000/api/v1',
   );
 
   /// Clave de OpenAI para el chatbot. Si va vacía, el chatbot usa
