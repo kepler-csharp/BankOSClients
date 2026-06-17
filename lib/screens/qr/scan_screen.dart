@@ -99,7 +99,7 @@ class _ScanScreenState extends State<ScanScreen> {
                 border: Border.all(color: BankColors.skyBlue, width: 3),
                 boxShadow: [
                   BoxShadow(
-                    color: BankColors.violet.withOpacity(0.5),
+                    color: BankColors.violet.withValues(alpha: 0.5),
                     blurRadius: 30,
                   ),
                 ],
@@ -113,7 +113,7 @@ class _ScanScreenState extends State<ScanScreen> {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.65),
+                color: Colors.black.withValues(alpha: 0.65),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Row(

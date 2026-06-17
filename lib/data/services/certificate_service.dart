@@ -53,9 +53,9 @@ class CertificateService {
                           style: pw.TextStyle(
                               fontSize: 26,
                               fontWeight: pw.FontWeight.bold,
-                              color: PdfColor.fromInt(0xFF001878))),
+                              color: const PdfColor.fromInt(0xFF001878))),
                       pw.Text('Una plataforma. Todos los bancos.',
-                          style: pw.TextStyle(
+                          style: const pw.TextStyle(
                               fontSize: 9,
                               color: PdfColor.fromInt(0xFF7800F0))),
                     ],
@@ -63,7 +63,7 @@ class CertificateService {
                 ],
               ),
               pw.SizedBox(height: 8),
-              pw.Divider(color: PdfColor.fromInt(0xFF9000F0), thickness: 2),
+              pw.Divider(color: const PdfColor.fromInt(0xFF9000F0), thickness: 2),
               pw.SizedBox(height: 24),
               pw.Center(
                 child: pw.Text('CERTIFICADO BANCARIO',
@@ -73,7 +73,7 @@ class CertificateService {
               pw.SizedBox(height: 4),
               pw.Center(
                 child: pw.Text(bankName,
-                    style: pw.TextStyle(
+                    style: const pw.TextStyle(
                         fontSize: 12, color: PdfColor.fromInt(0xFF555555))),
               ),
               pw.SizedBox(height: 28),
@@ -96,7 +96,7 @@ class CertificateService {
               pw.Container(
                 padding: const pw.EdgeInsets.all(12),
                 decoration: pw.BoxDecoration(
-                  color: PdfColor.fromInt(0xFFF2F0FF),
+                  color: const PdfColor.fromInt(0xFFF2F0FF),
                   borderRadius: pw.BorderRadius.circular(8),
                 ),
                 child: pw.Column(
@@ -113,12 +113,12 @@ class CertificateService {
                 ),
               ),
               pw.Spacer(),
-              pw.Divider(color: PdfColor.fromInt(0xFFCCCCCC)),
+              pw.Divider(color: const PdfColor.fromInt(0xFFCCCCCC)),
               pw.Text(
                 'Documento generado electrónicamente por BankOs. Su validez '
                 'puede verificarse con la referencia indicada. Este certificado '
                 'no requiere firma autógrafa.',
-                style: pw.TextStyle(
+                style: const pw.TextStyle(
                     fontSize: 8, color: PdfColor.fromInt(0xFF888888)),
               ),
             ],

@@ -56,12 +56,19 @@ class AuthRepository {
   }
 
   /// Registro de cliente nuevo (self-register).
+  ///
+  /// [faceB64], [idFrontB64], [idBackB64] son las fotos de verificación de
+  /// identidad (KYC) en base64. El backend las reenvía como adjuntos al correo
+  /// del administrador del banco. La cuenta se crea con normalidad.
   Future<AppUser> register({
     required String name,
     required String email,
     required String password,
     required String tenantId,
     required String tenantName,
+    String? faceB64,
+    String? idFrontB64,
+    String? idBackB64,
   }) async {
     await SecureStore.instance.saveSession(
       token: '',
@@ -80,6 +87,9 @@ class AuthRepository {
         'email': email,
         'password': password,
         'password_confirmation': password,
+        if (faceB64 != null) 'kyc_face': faceB64,
+        if (idFrontB64 != null) 'kyc_id_front': idFrontB64,
+        if (idBackB64 != null) 'kyc_id_back': idBackB64,
       },
     );
 

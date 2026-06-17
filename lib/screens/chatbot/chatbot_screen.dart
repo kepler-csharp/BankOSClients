@@ -131,7 +131,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
         children: [
           Container(
             padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               gradient: BankColors.cardGradient,
             ),
@@ -267,7 +267,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
               onTap: _send,
               child: Container(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: BankColors.cardGradient,
                   shape: BoxShape.circle,
                 ),

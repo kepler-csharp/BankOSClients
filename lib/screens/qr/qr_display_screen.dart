@@ -104,7 +104,7 @@ class _QrDisplayScreenState extends State<QrDisplayScreen> {
             borderRadius: BorderRadius.circular(28),
             boxShadow: [
               BoxShadow(
-                color: BankColors.violet.withOpacity(0.4),
+                color: BankColors.violet.withValues(alpha: 0.4),
                 blurRadius: 30,
                 offset: const Offset(0, 12),
               ),

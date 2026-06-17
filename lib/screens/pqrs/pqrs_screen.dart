@@ -105,7 +105,7 @@ class PqrsScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: typeColor.withOpacity(0.15),
+                  color: typeColor.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -122,8 +122,8 @@ class PqrsScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: resolved
-                      ? BankColors.green.withOpacity(0.15)
-                      : BankColors.warning.withOpacity(0.15),
+                      ? BankColors.green.withValues(alpha: 0.15)
+                      : BankColors.warning.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -159,13 +159,13 @@ class PqrsScreen extends StatelessWidget {
                 color: BankColors.surfaceDark,
                 borderRadius: BorderRadius.circular(12),
                 border:
-                    Border.all(color: BankColors.green.withOpacity(0.3)),
+                    Border.all(color: BankColors.green.withValues(alpha: 0.3)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Icon(Icons.support_agent,
                           size: 16, color: BankColors.green),
                       SizedBox(width: 6),

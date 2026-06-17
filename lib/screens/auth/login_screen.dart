@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         _errorBox(_banksError!, _loadBanks)
                       else
                         DropdownButtonFormField<Bank>(
-                          value: _selectedBank,
+                          initialValue: _selectedBank,
                           isExpanded: true,
                           dropdownColor: BankColors.cardDark,
                           decoration: const InputDecoration(

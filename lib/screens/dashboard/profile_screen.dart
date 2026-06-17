@@ -34,9 +34,9 @@ class ProfileScreen extends StatelessWidget {
               GlassCard(
                 gradient: LinearGradient(
                   colors: [
-                    BankColors.royalBlue.withOpacity(0.6),
-                    BankColors.violet.withOpacity(0.4),
-                    BankColors.emerald.withOpacity(0.3),
+                    BankColors.royalBlue.withValues(alpha: 0.6),
+                    BankColors.violet.withValues(alpha: 0.4),
+                    BankColors.emerald.withValues(alpha: 0.3),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundColor: Colors.white.withOpacity(0.25),
+                      backgroundColor: Colors.white.withValues(alpha: 0.25),
                       child: Text(
                         (user?.name.isNotEmpty == true
                                 ? user!.name[0]
@@ -70,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
                           const SizedBox(height: 2),
                           Text(user?.email ?? '',
                               style: TextStyle(
-                                  color: Colors.white.withOpacity(0.85),
+                                  color: Colors.white.withValues(alpha: 0.85),
                                   fontSize: 13),
                               overflow: TextOverflow.ellipsis),
                           const SizedBox(height: 6),
@@ -78,7 +78,7 @@ class ProfileScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 3),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
@@ -179,7 +179,7 @@ class ProfileScreen extends StatelessWidget {
         leading: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: BankColors.brightBlue.withOpacity(0.15),
+            color: BankColors.brightBlue.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(icon, color: BankColors.skyBlue, size: 20),
@@ -395,13 +395,13 @@ class _MailboxScreen extends StatelessWidget {
                 margin: const EdgeInsets.all(16),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: BankColors.brightBlue.withOpacity(0.1),
+                  color: BankColors.brightBlue.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                   border:
-                      Border.all(color: BankColors.brightBlue.withOpacity(0.3)),
+                      Border.all(color: BankColors.brightBlue.withValues(alpha: 0.3)),
                 ),
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Icon(Icons.info_outline,
                         color: BankColors.skyBlue, size: 18),
                     SizedBox(width: 10),

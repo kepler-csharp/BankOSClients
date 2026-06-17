@@ -70,7 +70,7 @@ class DashboardScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Hola,',
+                const Text('Hola,',
                     style: TextStyle(
                         color: BankColors.textSecondary, fontSize: 13)),
                 Text(
@@ -110,11 +110,11 @@ class DashboardScreen extends StatelessWidget {
   Widget _accountsSection(BuildContext context, BankingProvider banking) {
     final accounts = banking.accounts;
     if (accounts.isEmpty) {
-      return Padding(
-        padding: const EdgeInsets.all(20),
+      return const Padding(
+        padding: EdgeInsets.all(20),
         child: GlassCard(
           child: Column(
-            children: const [
+            children: [
               Icon(Icons.account_balance_wallet_outlined,
                   size: 48, color: BankColors.textMuted),
               SizedBox(height: 12),
@@ -164,8 +164,8 @@ class DashboardScreen extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             BankColors.royalBlue,
-            accent.withOpacity(0.85),
-            BankColors.emerald.withOpacity(0.7),
+            accent.withValues(alpha: 0.85),
+            BankColors.emerald.withValues(alpha: 0.7),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -173,7 +173,7 @@ class DashboardScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(22),
         boxShadow: [
           BoxShadow(
-            color: accent.withOpacity(0.35),
+            color: accent.withValues(alpha: 0.35),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -189,7 +189,7 @@ class DashboardScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(a.currency,
@@ -198,7 +198,7 @@ class DashboardScreen extends StatelessWidget {
               ),
               Icon(
                 a.isActive ? Icons.verified : Icons.lock_outline,
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.white.withValues(alpha: 0.9),
                 size: 20,
               ),
             ],
@@ -206,7 +206,7 @@ class DashboardScreen extends StatelessWidget {
           const Spacer(),
           Text('Saldo disponible',
               style: TextStyle(
-                  color: Colors.white.withOpacity(0.8), fontSize: 12)),
+                  color: Colors.white.withValues(alpha: 0.8), fontSize: 12)),
           const SizedBox(height: 4),
           FittedBox(
             fit: BoxFit.scaleDown,
@@ -259,7 +259,7 @@ class DashboardScreen extends StatelessWidget {
       BuildContext context, IconData icon, String label, VoidCallback onTap) {
     return Expanded(
       child: Material(
-        color: Colors.white.withOpacity(0.18),
+        color: Colors.white.withValues(alpha: 0.18),
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
@@ -320,7 +320,7 @@ class DashboardScreen extends StatelessWidget {
           return Column(
             children: [
               Material(
-                color: a.$3.withOpacity(0.15),
+                color: a.$3.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(16),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(16),
@@ -463,7 +463,7 @@ class TransactionTile extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 20),

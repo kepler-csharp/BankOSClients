@@ -134,6 +134,9 @@ class AuthProvider extends ChangeNotifier {
     required String password,
     required String tenantId,
     required String tenantName,
+    String? faceB64,
+    String? idFrontB64,
+    String? idBackB64,
   }) async {
     _setBusy(true);
     error = null;
@@ -144,6 +147,9 @@ class AuthProvider extends ChangeNotifier {
         password: password,
         tenantId: tenantId,
         tenantName: tenantName,
+        faceB64: faceB64,
+        idFrontB64: idFrontB64,
+        idBackB64: idBackB64,
       );
       this.tenantId = tenantId;
       this.tenantName = tenantName;

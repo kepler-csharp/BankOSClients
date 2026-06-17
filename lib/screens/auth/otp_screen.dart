@@ -163,7 +163,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     Center(
                       child: Container(
                         padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: BankColors.cardGradient,
                         ),

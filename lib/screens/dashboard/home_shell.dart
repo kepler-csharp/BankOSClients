@@ -31,7 +31,7 @@ class _HomeShellState extends State<HomeShell> {
 
   @override
   Widget build(BuildContext context) {
-    final pages = const [
+    const pages = [
       DashboardScreen(),
       PqrsScreen(),
       ChatbotScreen(),

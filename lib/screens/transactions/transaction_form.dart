@@ -543,7 +543,7 @@ class _TransactionFormState extends State<TransactionForm> {
             padding: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
               color: selected
-                  ? BankColors.brightBlue.withOpacity(0.18)
+                  ? BankColors.brightBlue.withValues(alpha: 0.18)
                   : BankColors.surfaceDark,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
@@ -741,9 +741,9 @@ class _TransactionFormState extends State<TransactionForm> {
           Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: BankColors.green.withOpacity(0.1),
+              color: BankColors.green.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: BankColors.green.withOpacity(0.4)),
+              border: Border.all(color: BankColors.green.withValues(alpha: 0.4)),
             ),
             child: Row(
               children: [
@@ -849,9 +849,9 @@ class _TransactionFormState extends State<TransactionForm> {
   Widget _noteBox(String msg) => Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: BankColors.brightBlue.withOpacity(0.1),
+          color: BankColors.brightBlue.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: BankColors.brightBlue.withOpacity(0.3)),
+          border: Border.all(color: BankColors.brightBlue.withValues(alpha: 0.3)),
         ),
         child: Row(
           children: [

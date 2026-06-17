@@ -6,6 +6,7 @@ import '../../data/models/models.dart';
 import '../../providers/auth_provider.dart';
 import '../../widgets/common.dart';
 import '../legal/privacy_screen.dart';
+import 'kyc_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   final List<Bank> banks;
@@ -50,20 +51,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
           error: true);
       return;
     }
-    final auth = context.read<AuthProvider>();
-    final ok = await auth.register(
-      name: _name.text.trim(),
-      email: _email.text.trim(),
-      password: _password.text,
-      tenantId: _bank!.id,
-      tenantName: _bank!.name,
+    // El registro se completa tras la verificación de identidad (KYC).
+    // Pasamos los datos del formulario a la pantalla de captura de fotos.
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => KycScreen(
+          registration: PendingRegistration(
+            name: _name.text.trim(),
+            email: _email.text.trim(),
+            password: _password.text,
+            tenantId: _bank!.id,
+            tenantName: _bank!.name,
+          ),
+        ),
+      ),
     );
-    if (ok && mounted) {
-      // Vuelve al root → OtpScreen.
-      Navigator.popUntil(context, (r) => r.isFirst);
-    } else if (mounted && auth.error != null) {
-      showSnack(context, auth.error!, error: true);
-    }
   }
 
   @override
@@ -85,7 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Image.asset('assets/images/logo-text.png', height: 60),
                     const SizedBox(height: 24),
                     DropdownButtonFormField<Bank>(
-                      value: _bank,
+                      initialValue: _bank,
                       isExpanded: true,
                       dropdownColor: BankColors.cardDark,
                       decoration: const InputDecoration(
@@ -182,8 +185,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     const SizedBox(height: 16),
                     GradientButton(
-                      label: 'Registrarme',
-                      icon: Icons.person_add_alt,
+                      label: 'Continuar',
+                      icon: Icons.arrow_forward,
                       loading: auth.busy,
                       onPressed: auth.busy ? null : _submit,
                     ),

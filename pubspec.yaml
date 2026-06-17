@@ -26,6 +26,9 @@ dependencies:
   qr_flutter: ^4.1.0           # Generar QR (en memoria, no se guarda)
   mobile_scanner: ^5.1.1       # Escanear QR con la cámara
 
+  # KYC — captura de foto de rostro y documento de identidad
+  image_picker: ^1.1.2         # Cámara para verificación de identidad
+
   # Correo simulado / certificado
   pdf: ^3.11.1                 # Generar certificado PDF
   printing: ^5.13.1            # Compartir/abrir/“enviar” el PDF

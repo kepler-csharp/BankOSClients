@@ -82,7 +82,7 @@ class PrivacyScreen extends StatelessWidget {
                       'el responsable del tratamiento de tus datos personales.',
                 ),
                 const SizedBox(height: 24),
-                Center(
+                const Center(
                   child: Text(
                     '© 2025 BankOs · Una plataforma, todos los bancos.',
                     style: TextStyle(
@@ -98,9 +98,9 @@ class PrivacyScreen extends StatelessWidget {
     );
   }
 
-  Widget _intro() => GlassCard(
+  Widget _intro() => const GlassCard(
         child: Row(
-          children: const [
+          children: [
             Icon(Icons.shield_outlined, color: BankColors.skyBlue, size: 32),
             SizedBox(width: 14),
             Expanded(

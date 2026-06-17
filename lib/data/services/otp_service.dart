@@ -48,7 +48,7 @@ class OtpService {
     final n = rng.nextInt(max);
     _code = n.toString().padLeft(AppConfig.otpLength, '0');
     _expiresAt =
-        DateTime.now().add(Duration(minutes: AppConfig.otpValidityMinutes));
+        DateTime.now().add(const Duration(minutes: AppConfig.otpValidityMinutes));
     _forEmail = email;
     _attempts = 0;
 

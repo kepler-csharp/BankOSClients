@@ -154,14 +154,14 @@ class _CertificateScreenState extends State<CertificateScreen> {
                 GlassCard(
                   gradient: LinearGradient(
                     colors: [
-                      BankColors.royalBlue.withOpacity(0.5),
-                      BankColors.violet.withOpacity(0.3),
+                      BankColors.royalBlue.withValues(alpha: 0.5),
+                      BankColors.violet.withValues(alpha: 0.3),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  child: Row(
-                    children: const [
+                  child: const Row(
+                    children: [
                       Icon(Icons.workspace_premium,
                           color: Colors.white, size: 40),
                       SizedBox(width: 16),
@@ -178,9 +178,9 @@ class _CertificateScreenState extends State<CertificateScreen> {
                 const SizedBox(height: 24),
 
                 if (accounts.isEmpty)
-                  GlassCard(
+                  const GlassCard(
                     child: Column(
-                      children: const [
+                      children: [
                         Icon(Icons.account_balance_wallet_outlined,
                             size: 48, color: BankColors.textMuted),
                         SizedBox(height: 12),
@@ -253,16 +253,16 @@ class _CertificateScreenState extends State<CertificateScreen> {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: BankColors.warning.withOpacity(0.1),
+                        color: BankColors.warning.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                            color: BankColors.warning.withOpacity(0.3)),
+                            color: BankColors.warning.withValues(alpha: 0.3)),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Icon(Icons.lock_outline,
                                   color: BankColors.warning, size: 18),
                               SizedBox(width: 8),
@@ -308,13 +308,13 @@ class _CertificateScreenState extends State<CertificateScreen> {
                     Container(
                       padding: const EdgeInsets.all(14),
                       decoration: BoxDecoration(
-                        color: BankColors.green.withOpacity(0.1),
+                        color: BankColors.green.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                            color: BankColors.green.withOpacity(0.3)),
+                            color: BankColors.green.withValues(alpha: 0.3)),
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Icon(Icons.check_circle,
                               color: BankColors.green, size: 20),
                           SizedBox(width: 10),
