@@ -154,8 +154,8 @@ class _CertificateScreenState extends State<CertificateScreen> {
                 GlassCard(
                   gradient: LinearGradient(
                     colors: [
-                      BankColors.royalBlue.withValues(alpha: 0.5),
-                      BankColors.violet.withValues(alpha: 0.3),
+                      BankColors.royalBlue.withValues(alpha: 0.95),
+                      BankColors.violet.withValues(alpha: 0.85),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,

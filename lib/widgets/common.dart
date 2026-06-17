@@ -16,17 +16,17 @@ class BrandBackground extends StatelessWidget {
           Positioned(
             top: -120,
             right: -80,
-            child: _blob(BankColors.violet.withValues(alpha: 0.22), 260),
+            child: _blob(BankColors.violet.withValues(alpha: 0.10), 260),
           ),
           Positioned(
             top: -60,
             left: -100,
-            child: _blob(BankColors.brightBlue.withValues(alpha: 0.18), 240),
+            child: _blob(BankColors.brightBlue.withValues(alpha: 0.08), 240),
           ),
           Positioned(
             bottom: -140,
             left: -60,
-            child: _blob(BankColors.emerald.withValues(alpha: 0.16), 280),
+            child: _blob(BankColors.emerald.withValues(alpha: 0.07), 280),
           ),
           child,
         ],
@@ -97,7 +97,7 @@ class GradientButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
               boxShadow: [
                 BoxShadow(
-                  color: BankColors.violet.withValues(alpha: 0.4),
+                  color: BankColors.violet.withValues(alpha: 0.22),
                   blurRadius: 18,
                   offset: const Offset(0, 8),
                 ),

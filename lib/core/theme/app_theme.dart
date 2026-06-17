@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'bank_colors.dart';
 
-/// Tema oscuro de BankOs. Se apoya en Google Fonts (Poppins) para títulos
+/// Tema claro de BankOs. Se apoya en Google Fonts (Poppins) para títulos
 /// y en la paleta de marca para todos los componentes.
 class AppTheme {
   AppTheme._();
 
-  static ThemeData get dark {
-    final base = ThemeData.dark(useMaterial3: true);
+  static ThemeData get light {
+    final base = ThemeData.light(useMaterial3: true);
 
     final textTheme = GoogleFonts.poppinsTextTheme(base.textTheme).apply(
       bodyColor: BankColors.textPrimary,
@@ -19,7 +19,7 @@ class AppTheme {
       scaffoldBackgroundColor: BankColors.black,
       textTheme: textTheme,
 
-      colorScheme: const ColorScheme.dark(
+      colorScheme: const ColorScheme.light(
         primary: BankColors.brightBlue,
         secondary: BankColors.magenta,
         tertiary: BankColors.green,

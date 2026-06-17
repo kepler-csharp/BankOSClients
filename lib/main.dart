@@ -36,7 +36,7 @@ class BankOsApp extends StatelessWidget {
       child: MaterialApp(
         title: 'BankOs',
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.dark,
+        theme: AppTheme.light,
         locale: const Locale('es'),
         home: const _Root(),
       ),

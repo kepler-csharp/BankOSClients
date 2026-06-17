@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Paleta de marca BankOs, extraída directamente de los logos provistos.
+/// Paleta de marca BankOs (modo claro), derivada de los logos provistos.
 /// El gradiente de la "O" recorre: azul profundo → azul brillante →
 /// morado → cian-verde. Todo el tema de la app se construye sobre esto.
 class BankColors {
@@ -22,23 +22,24 @@ class BankColors {
   static const Color emerald = Color(0xFF00A890);
   static const Color green = Color(0xFF00C078);
 
-  // Fondos
-  static const Color black = Color(0xFF050507);
-  static const Color surfaceDark = Color(0xFF101018);
-  static const Color cardDark = Color(0xFF16161F);
-  static const Color cardBorder = Color(0xFF24243A);
+  // Fondos (claros)
+  static const Color black = Color(0xFFF6F7FB);       // antes fondo principal
+  static const Color surfaceDark = Color(0xFFFFFFFF);  // superficies / inputs
+  static const Color cardDark = Color(0xFFFFFFFF);     // tarjetas
+  static const Color cardBorder = Color(0xFFE2E5EF);   // bordes sutiles
 
-  // Texto
-  static const Color textPrimary = Color(0xFFF4F4FA);
-  static const Color textSecondary = Color(0xFF9C9CB4);
-  static const Color textMuted = Color(0xFF6A6A82);
+  // Texto (sobre claro)
+  static const Color textPrimary = Color(0xFF14141C);
+  static const Color textSecondary = Color(0xFF5A5A70);
+  static const Color textMuted = Color(0xFF9092A6);
 
   // Semánticos
-  static const Color success = Color(0xFF00C078);
-  static const Color error = Color(0xFFFF4D6A);
-  static const Color warning = Color(0xFFFFB020);
+  static const Color success = Color(0xFF00A865);
+  static const Color error = Color(0xFFE03050);
+  static const Color warning = Color(0xFFC97E00);
 
-  /// Gradiente principal de marca (el de la "O" del logo).
+  /// Gradiente principal de marca (el de la "O" del logo). Se mantiene vivo
+  /// porque es identidad de marca, no fondo.
   static const LinearGradient brandGradient = LinearGradient(
     colors: [brightBlue, violet, magenta, emerald, green],
     stops: [0.0, 0.35, 0.5, 0.8, 1.0],
@@ -53,9 +54,9 @@ class BankColors {
     end: Alignment.bottomRight,
   );
 
-  /// Gradiente sutil para fondos de pantalla.
+  /// Gradiente sutil para fondos de pantalla (suave sobre base clara).
   static const LinearGradient backgroundGradient = LinearGradient(
-    colors: [black, Color(0xFF0A0A14), black],
+    colors: [Color(0xFFF6F7FB), Color(0xFFEEF1F9), Color(0xFFF6F7FB)],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
